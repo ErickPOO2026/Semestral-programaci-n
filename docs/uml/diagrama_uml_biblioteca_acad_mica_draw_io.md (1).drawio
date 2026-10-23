@@ -1,0 +1,104 @@
+<mxfile host="app.diagrams.net" agent="Gemini">
+  <diagram id="uml_biblioteca_academica" name="Diagrama de Clases - Biblioteca Academica">
+    <mxGraphModel dx="2006" dy="1147" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#0F172A;" value="Diagrama de Clases UML - Sistema de Gestión de Biblioteca Académica" vertex="1">
+          <mxGeometry height="40" width="1520" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_App" parent="1" style="swipeable=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="App&#xa;--&#xa;- adminPrincipal : Administrador&#xa;- listaLibros : List&lt;Libro&gt;&#xa;- listaUsuarios : List&lt;Usuario&gt;&#xa;--&#xa;+ main(args : String[]) : void&#xa;+ iniciarSistema() : void&#xa;+ desplegarMenuPrincipal() : void" vertex="1">
+          <mxGeometry height="150" width="260" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_IOUtils" parent="1" style="swipeable=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="IOUtils&#xa;--&#xa;- scanner : Scanner {static}&#xa;--&#xa;+ readString(prompt : String) : String {static}&#xa;+ readInt(prompt : String) : int {static}&#xa;+ printHeader(title : String) : void {static}&#xa;+ showMenu() : int {static}" vertex="1">
+          <mxGeometry height="170" width="310" x="340" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_Administrador" parent="1" style="swipeable=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="Administrador&#xa;--&#xa;- idAdmin : String&#xa;- nombre : String&#xa;- correo : String&#xa;- nivelAcceso : String&#xa;--&#xa;+ Administrador(id, nombre, correo, nivel)&#xa;+ registrarLibro(libro : Libro) : void&#xa;+ registrarUsuario(usuario : Usuario) : void&#xa;+ aplicarPenalizacion(p : Penalizacion) : void&#xa;+ getIdAdmin() : String" vertex="1">
+          <mxGeometry height="250" width="290" x="40" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_Libro" parent="1" style="swipeable=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="Libro&#xa;--&#xa;- isbn : String&#xa;- titulo : String&#xa;- anioPublicacion : int&#xa;- disponible : boolean&#xa;- autor : Autor&#xa;- editorial : Editorial&#xa;- categoria : Categoria&#xa;--&#xa;+ Libro(isbn, titulo, anio, autor, ed, cat)&#xa;+ prestar() : boolean&#xa;+ devolver() : void&#xa;+ isDisponible() : boolean&#xa;+ getTitulo() : String" vertex="1">
+          <mxGeometry height="240" width="310" x="420" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_Autor" parent="1" style="swipeable=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="Autor&#xa;--&#xa;- idAutor : String&#xa;- nombre : String&#xa;- nacionalidad : String&#xa;--&#xa;+ Autor(id, nombre, nac)&#xa;+ getNombre() : String" vertex="1">
+          <mxGeometry height="130" width="220" x="810" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_Editorial" parent="1" style="swipeable=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="Editorial&#xa;--&#xa;- idEditorial : String&#xa;- nombre : String&#xa;- pais : String&#xa;--&#xa;+ Editorial(id, nombre, pais)&#xa;+ getNombre() : String" vertex="1">
+          <mxGeometry height="150" width="220" x="810" y="413" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_Categoria" parent="1" style="swipeable=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="Categoria&#xa;--&#xa;- idCategoria : String&#xa;- nombre : String&#xa;- descripcion : String&#xa;--&#xa;+ Categoria(id, nombre, desc)&#xa;+ getNombre() : String" vertex="1">
+          <mxGeometry height="150" width="220" x="810" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_Usuario" parent="1" style="swipeable=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="Usuario&#xa;--&#xa;- idUsuario : String&#xa;- nombre : String&#xa;- correo : String&#xa;- tipoUsuario : String&#xa;- estado : String&#xa;--&#xa;+ Usuario(id, nombre, correo, tipo)&#xa;+ solicitarPrestamo(libro: Libro) : Prestamo&#xa;+ consultarHistorial() : List&lt;Prestamo&gt;&#xa;+ getEstado() : String" vertex="1">
+          <mxGeometry height="190" width="320" x="40" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_Prestamo" parent="1" style="swipeable=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="Prestamo&#xa;--&#xa;- idPrestamo : String&#xa;- fechaInicio : Date&#xa;- fechaDevolucionEsperada : Date&#xa;- estado : String&#xa;- usuario : Usuario&#xa;- libro : Libro&#xa;--&#xa;+ Prestamo(id, fInicio, fEsperada, u, l)&#xa;+ registrarDevolucion() : Devolucion&#xa;+ esVencido() : boolean&#xa;+ getIdPrestamo() : String" vertex="1">
+          <mxGeometry height="200" width="310" x="420" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_Devolucion" parent="1" style="swipeable=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="Devolucion&#xa;--&#xa;- idDevolucion : String&#xa;- fechaEntrega : Date&#xa;- diasRetraso : int&#xa;- prestamo : Prestamo&#xa;--&#xa;+ Devolucion(id, fEntrega, prestamo)&#xa;+ calcularDiasRetraso() : int&#xa;+ requierePenalizacion() : boolean" vertex="1">
+          <mxGeometry height="160" width="310" x="420" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_Penalizacion" parent="1" style="swipeable=0;html=1;fillColor=#FEF2F2;strokeColor=#EF4444;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="Penalizacion&#xa;--&#xa;- idPenalizacion : String&#xa;- monto : double&#xa;- motivo : String&#xa;- pagada : boolean&#xa;- usuario : Usuario&#xa;--&#xa;+ Penalizacion(id, monto, motivo, u)&#xa;+ pagar() : void&#xa;+ isPagada() : boolean&#xa;+ getMonto() : double" vertex="1">
+          <mxGeometry height="180" width="290" x="40" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="clase_Reporte" parent="1" style="swipeable=0;html=1;fillColor=#F8FAFC;strokeColor=#475569;fontColor=#0F172A;align=left;verticalAlign=top;spacingLeft=8;spacingRight=8;fontStyle=0;fontSize=12;fontFamily=Courier New;whiteSpace=wrap;" value="Reporte&#xa;--&#xa;- idReporte : String&#xa;- fechaGeneracion : Date&#xa;- tipoReporte : String&#xa;--&#xa;+ Reporte(id, tipo)&#xa;+ generarLibrosMasPrestados(p: List&lt;Prestamo&gt;) : void&#xa;+ generarEstadisticasPorEditorial(l: List&lt;Libro&gt;) : void" vertex="1">
+          <mxGeometry height="150" width="370" x="700" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_app_admin" edge="1" parent="1" source="clase_App" style="endArrow=open;endSize=12;html=1;strokeColor=#64748B;fontColor=#64748B;fontSize=11;exitX=0.25;exitY=1;entryX=0.25;entryY=0;" target="clase_Administrador" value="1">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_app_libro" edge="1" parent="1" source="clase_App" style="endArrow=open;endSize=12;html=1;strokeColor=#64748B;fontColor=#64748B;fontSize=11;exitX=0.75;exitY=1;entryX=0.25;entryY=0;" target="clase_Libro" value="1..*">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_admin_libro" edge="1" parent="1" source="clase_Administrador" style="endArrow=open;endSize=12;html=1;strokeColor=#64748B;fontColor=#64748B;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="clase_Libro" value="gestiona">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_libro_autor" edge="1" parent="1" source="clase_Libro" style="endArrow=open;endSize=12;html=1;strokeColor=#64748B;fontColor=#64748B;fontSize=11;exitX=1;exitY=0.15;entryX=0;entryY=0.5;" target="clase_Autor" value="1">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_libro_editorial" edge="1" parent="1" source="clase_Libro" style="endArrow=open;endSize=12;html=1;strokeColor=#64748B;fontColor=#64748B;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="clase_Editorial" value="1">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_libro_categoria" edge="1" parent="1" source="clase_Libro" style="endArrow=open;endSize=12;html=1;strokeColor=#64748B;fontColor=#64748B;fontSize=11;exitX=1;exitY=0.85;entryX=0;entryY=0.5;" target="clase_Categoria" value="1">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_usuario_prestamo" edge="1" parent="1" source="clase_Usuario" style="endArrow=open;endSize=12;html=1;strokeColor=#64748B;fontColor=#64748B;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="clase_Prestamo" value="1..*">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_libro_prestamo" edge="1" parent="1" source="clase_Libro" style="endArrow=open;endSize=12;html=1;strokeColor=#64748B;fontColor=#64748B;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="clase_Prestamo" value="1">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_prestamo_devolucion" edge="1" parent="1" source="clase_Prestamo" style="endArrow=open;endSize=12;html=1;strokeColor=#64748B;fontColor=#64748B;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="clase_Devolucion" value="0..1">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_devolucion_penalizacion" edge="1" parent="1" source="clase_Devolucion" style="endArrow=open;endSize=12;html=1;strokeColor=#64748B;fontColor=#64748B;fontSize=11;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="clase_Penalizacion" value="genera (0..1)">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_usuario_penalizacion" edge="1" parent="1" source="clase_Usuario" style="endArrow=open;endSize=12;html=1;strokeColor=#64748B;fontColor=#64748B;fontSize=11;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="clase_Penalizacion" value="0..*">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
